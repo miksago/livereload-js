@@ -82,7 +82,7 @@ exports.Reloader = class Reloader
       if plugin.reload && plugin.reload(path, options)
         return
     if options.liveCSS
-      if path.match(/\.css$/i)
+      if path.match(/\.?scss$/i)
         return if @reloadStylesheet(path)
     if options.liveImg
       if path.match(/\.(jpe?g|png|gif)$/i)
@@ -211,7 +211,7 @@ exports.Reloader = class Reloader
     # http://www.zachleat.com/web/load-css-dynamically/
     # http://pieisgood.org/test/script-link-events/
     clone.onload = =>
-      console.log "onload!"
+      # console.log "onload!"
       @knownToSupportCssOnLoad = yes
       executeCallback()
 
@@ -219,7 +219,7 @@ exports.Reloader = class Reloader
       # polling
       do poll = =>
         if clone.sheet
-          console.log "polling!"
+          # console.log "polling!"
           executeCallback()
         else
           @Timer.start 50, poll
