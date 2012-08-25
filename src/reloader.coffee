@@ -82,7 +82,7 @@ exports.Reloader = class Reloader
       if plugin.reload && plugin.reload(path, options)
         return
     if options.liveCSS
-      if path.match(/\.?scss$/i)
+      if path.match(/\.s?[c|a]ss$/i)  # CSS & SSASS
         return if @reloadStylesheet(path)
     if options.liveImg
       if path.match(/\.(jpe?g|png|gif)$/i)

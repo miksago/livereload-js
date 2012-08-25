@@ -512,7 +512,7 @@ __reloader.Reloader = Reloader = (function() {
       }
     }
     if (options.liveCSS) {
-      if (path.match(/\.?scss$/i)) {
+      if (path.match(/\.s?[c|a]ss$/i)) {
         if (this.reloadStylesheet(path)) {
           return;
         }
