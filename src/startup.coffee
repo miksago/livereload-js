@@ -33,6 +33,6 @@ LiveReload.on 'reload', ->
 
   html.setAttribute('class', currentHtmlClass.replace(loadingClass, '') + "#{loadingClass}")
 
-  setTimeout (-> html.setAttribute('class', currentHtmlClass.replace(loadingClass, ''))), 300
+  setTimeout (-> html.setAttribute('class', currentHtmlClass.replace(loadingClass, ''))), 2000
 
 CustomEvents.bind document, 'LiveReloadShutDown', -> LiveReload.shutDown()
