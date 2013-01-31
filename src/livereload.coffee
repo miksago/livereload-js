@@ -95,7 +95,7 @@ exports.LiveReload = class LiveReload
   hasPlugin: (identifier) -> !!@pluginIdentifiers[identifier]
 
   addPlugin: (pluginClass) ->
-    return if @hasPlugin(pluginClass.identifier)
+    return if @hasPlugin(pluginClass.identifier) || !@reloader
     @pluginIdentifiers[pluginClass.identifier] = yes
 
     plugin = new pluginClass @window,
