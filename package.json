@@ -1,0 +1,8 @@
+{
+  "name": "livereload-js",
+  "version":"2.0.8",
+  "directories": {
+    "lib": "dist"
+  },
+  "main": "livereload-js"
+}
